@@ -1,0 +1,117 @@
+.lab {
+  background: var(--bg-deep);
+  overflow: hidden;
+}
+
+.lab__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 0% 50%, rgba(124, 77, 255, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 100% 50%, rgba(0, 229, 255, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.lab__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Content */
+.lab__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lab__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--white);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.lab__desc {
+  font-size: clamp(1rem, 2vw, 1.05rem);
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Areas */
+.lab__areas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lab__area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: var(--blur-glass);
+  transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: default;
+}
+
+.lab__area:hover {
+  border-color: rgba(0, 229, 255, 0.25);
+  background: rgba(0, 229, 255, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.lab__area-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan);
+  flex-shrink: 0;
+  transition: box-shadow var(--transition-fast);
+}
+
+.lab__area:hover .lab__area-icon {
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
+}
+
+.lab__area-label {
+  flex: 1;
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.lab__area:hover .lab__area-label {
+  color: var(--white);
+}
+
+.lab__area-arrow {
+  color: var(--text-muted);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.lab__area:hover .lab__area-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--cyan);
+}
+
+@media (max-width: 900px) {
+  .lab__layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

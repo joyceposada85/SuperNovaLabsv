@@ -1,0 +1,175 @@
+.routes {
+  background: var(--bg-deep);
+  overflow: hidden;
+}
+
+.routes__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* === ROUTE CARD === */
+.route-card {
+  position: relative;
+  padding: 2.25rem;
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  backdrop-filter: var(--blur-glass);
+  -webkit-backdrop-filter: var(--blur-glass);
+  overflow: hidden;
+  cursor: default;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.route-card:hover {
+  box-shadow: var(--glow-card);
+}
+
+.route-card--blue:hover {
+  border-color: rgba(0, 140, 255, 0.4);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 140, 255, 0.15);
+}
+
+.route-card--cyan:hover {
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 229, 255, 0.12);
+}
+
+.route-card--violet:hover {
+  border-color: rgba(124, 77, 255, 0.4);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(124, 77, 255, 0.15);
+}
+
+.route-card--blue-violet:hover {
+  border-color: rgba(0, 140, 255, 0.35);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(124, 77, 255, 0.12);
+}
+
+/* Glow overlay */
+.route-card__glow {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.08;
+  transition: opacity var(--transition-base);
+}
+
+.route-card--blue .route-card__glow { background: var(--blue-electric); }
+.route-card--cyan .route-card__glow { background: var(--cyan); }
+.route-card--violet .route-card__glow { background: var(--violet); }
+.route-card--blue-violet .route-card__glow { background: linear-gradient(135deg, var(--blue-electric), var(--violet)); }
+
+.route-card:hover .route-card__glow { opacity: 0.18; }
+
+/* Header */
+.route-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.route-card__number {
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.route-card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow var(--transition-base);
+}
+
+.route-card--blue .route-card__icon {
+  background: rgba(0, 140, 255, 0.12);
+  color: var(--blue-electric);
+  border: 1px solid rgba(0, 140, 255, 0.2);
+}
+
+.route-card--cyan .route-card__icon {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--cyan);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.route-card--violet .route-card__icon {
+  background: rgba(124, 77, 255, 0.12);
+  color: var(--violet);
+  border: 1px solid rgba(124, 77, 255, 0.2);
+}
+
+.route-card--blue-violet .route-card__icon {
+  background: rgba(124, 77, 255, 0.1);
+  color: #9B7BFF;
+  border: 1px solid rgba(124, 77, 255, 0.2);
+}
+
+.route-card:hover .route-card__icon {
+  box-shadow: 0 0 20px rgba(0, 140, 255, 0.2);
+}
+
+/* Content */
+.route-card__title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+.route-card__desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  flex: 1;
+}
+
+/* Tags */
+.route-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.route-card__tag {
+  font-family: var(--font-primary);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* CTA */
+.route-card__cta {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .routes__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .route-card { padding: 1.75rem; }
+}

@@ -1,8 +1,16 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Send, AlertCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, MessageCircle, Send } from 'lucide-react';
 import { useScrollAnimation, fadeUpVariants, staggerContainerVariants } from '../../hooks/useScrollAnimation';
 import './Contact.css';
+
+function WhatsAppIcon({ size = 20 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.99c-.002 5.45-4.437 9.887-9.885 9.887m0-18.272c-5.419 0-9.832 4.412-9.835 9.833 0 1.733.451 3.42 1.309 4.908l-1.391 5.082 5.201-1.364c1.437.784 3.056 1.198 4.713 1.199h.004c5.418 0 9.831-4.413 9.834-9.835.002-2.624-1.02-5.09-2.887-6.958a9.78 9.78 0 00-6.948-2.867"/>
+    </svg>
+  );
+}
 
 const profileOptions = ['Profesional', 'Estudiante', 'Emprendedor', 'Empresa', 'Otro'];
 const interestOptions = ['Cursos', 'Capacitación empresarial', 'Consultoría', 'Desarrollo de software', 'Otro'];
@@ -26,8 +34,10 @@ export default function Contact({ prefillData }) {
     name: '', email: '', profile: '', interest: '', message: '',
   });
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState(null); // null | 'demo'
-  const [submitting, setSubmitting] = useState(false);
+
+  const PHONE_NUMBER = '50362953409';
+  const DISPLAY_PHONE = '+503 6295-3409';
+  const CONTACT_EMAIL = 'supernovalabsv@gmail.com';
 
   useEffect(() => {
     if (prefillData) {
@@ -46,25 +56,43 @@ export default function Contact({ prefillData }) {
     if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
   };
 
-  const handleSubmit = async (e) => {
+  const getFormattedMessageText = () => {
+    return `Hola, SuperNova Lab SV.
+Mi nombre es: ${form.name.trim()}
+Mi correo es: ${form.email.trim()}
+Perfil: ${form.profile}
+Me interesa: ${form.interest}
+Mensaje: ${form.message.trim() || 'Sin mensaje adicional'}`;
+  };
+
+  const handleSendWhatsApp = (e) => {
     e.preventDefault();
     const errs = validateForm(form);
     if (Object.keys(errs).length > 0) {
       setErrors(errs);
       return;
     }
-    setSubmitting(true);
-    // Simulate async
-    await new Promise(r => setTimeout(r, 1200));
-    setSubmitting(false);
-    setStatus('demo');
+    const messageText = getFormattedMessageText();
+    const url = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(messageText)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
-  const handleReset = () => {
-    setForm({ name: '', email: '', profile: '', interest: '', message: '' });
-    setErrors({});
-    setStatus(null);
+  const handleSendEmail = (e) => {
+    e.preventDefault();
+    const errs = validateForm(form);
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs);
+      return;
+    }
+    const subjectText = 'Solicitud de información — SuperNova Lab SV';
+    const bodyText = getFormattedMessageText();
+    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
+    window.location.href = mailtoUrl;
   };
+
+  const directWhatsAppUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(
+    'Hola, SuperNova Lab SV. Deseo recibir información sobre sus cursos y programas de formación.'
+  )}`;
 
   return (
     <section id="contacto" className="contact section" aria-labelledby="contact-title">
@@ -79,201 +107,197 @@ export default function Contact({ prefillData }) {
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
         >
-          {/* Left info */}
+          {/* Left info & direct contact */}
           <motion.div className="contact__info" variants={fadeUpVariants}>
-            <div className="label">Contacto</div>
+            <div className="label">Contacto Directo</div>
             <h2 id="contact-title" className="contact__title">
               Cuéntanos{' '}
               <span className="gradient-text">qué necesitas.</span>
             </h2>
             <p className="contact__desc">
-              Completa el formulario y nos pondremos en contacto contigo para
-              explorar cómo SuperNova Lab SV puede ayudarte.
+              Escríbenos directamente por WhatsApp o completa el formulario para comunicarte con nosotros inmediatamente.
             </p>
 
-            <div className="contact__items" role="list">
-              {[
-                { label: 'Formación virtual', desc: 'Para toda Latinoamérica.' },
-                { label: 'Programas empresariales', desc: 'Capacitación presencial para grupos corporativos.' },
-                { label: 'Consultoría y desarrollo', desc: 'Soluciones tecnológicas a medida.' },
-              ].map(item => (
-                <div key={item.label} className="contact__item" role="listitem">
-                  <div className="contact__item-dot" aria-hidden="true" />
-                  <div>
-                    <strong className="contact__item-label">{item.label}</strong>
-                    <p className="contact__item-desc">{item.desc}</p>
-                  </div>
+            {/* Direct WhatsApp Hero Button */}
+            <div className="contact__direct-action">
+              <a
+                href={directWhatsAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-whatsapp contact__wa-main-btn"
+                aria-label="Consultar por WhatsApp con SuperNova Lab SV"
+              >
+                <WhatsAppIcon size={22} />
+                <span>Consultar por WhatsApp</span>
+              </a>
+            </div>
+
+            {/* Visible Contact Cards */}
+            <div className="contact__channels" role="list">
+              <a
+                href={directWhatsAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact__channel-card"
+                role="listitem"
+              >
+                <div className="contact__channel-icon contact__channel-icon--wa" aria-hidden="true">
+                  <WhatsAppIcon size={20} />
                 </div>
-              ))}
+                <div>
+                  <span className="contact__channel-label">WhatsApp</span>
+                  <strong className="contact__channel-value">{DISPLAY_PHONE}</strong>
+                </div>
+              </a>
+
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="contact__channel-card"
+                role="listitem"
+              >
+                <div className="contact__channel-icon contact__channel-icon--email" aria-hidden="true">
+                  <Mail size={20} />
+                </div>
+                <div>
+                  <span className="contact__channel-label">Correo electrónico</span>
+                  <strong className="contact__channel-value">{CONTACT_EMAIL}</strong>
+                </div>
+              </a>
             </div>
           </motion.div>
 
           {/* Form */}
           <motion.div className="contact__form-wrap" variants={fadeUpVariants}>
-            <AnimatePresence mode="wait">
-              {status === 'demo' ? (
-                <motion.div
-                  key="demo"
-                  className="contact__demo-msg"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.4 }}
-                  role="alert"
+            <form
+              className="contact__form"
+              noValidate
+              aria-label="Formulario de contacto SuperNova Lab SV"
+            >
+              {/* Name */}
+              <div className={`form-field ${errors.name ? 'form-field--error' : ''}`}>
+                <label htmlFor="contact-name" className="form-label">Nombre</label>
+                <input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  className="form-input"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Tu nombre completo"
+                  aria-required="true"
+                  aria-describedby={errors.name ? 'name-error' : undefined}
+                />
+                {errors.name && (
+                  <span id="name-error" className="form-error" role="alert">{errors.name}</span>
+                )}
+              </div>
+
+              {/* Email */}
+              <div className={`form-field ${errors.email ? 'form-field--error' : ''}`}>
+                <label htmlFor="contact-email" className="form-label">Correo electrónico</label>
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  className="form-input"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="tu@correo.com"
+                  aria-required="true"
+                  aria-describedby={errors.email ? 'email-error' : undefined}
+                />
+                {errors.email && (
+                  <span id="email-error" className="form-error" role="alert">{errors.email}</span>
+                )}
+              </div>
+
+              {/* Profile */}
+              <div className={`form-field ${errors.profile ? 'form-field--error' : ''}`}>
+                <label htmlFor="contact-profile" className="form-label">Soy...</label>
+                <select
+                  id="contact-profile"
+                  name="profile"
+                  className="form-select"
+                  value={form.profile}
+                  onChange={handleChange}
+                  aria-required="true"
+                  aria-describedby={errors.profile ? 'profile-error' : undefined}
                 >
-                  <div className="contact__demo-icon" aria-hidden="true">
-                    <AlertCircle size={28} />
-                  </div>
-                  <h3>Formulario en configuración</h3>
-                  <p>
-                    El canal de envío de mensajes será configurado próximamente.
-                    Tu mensaje no ha sido enviado — esta es una demostración del formulario.
-                  </p>
-                  <p className="contact__demo-note">
-                    Mientras tanto, puedes encontrarnos en{' '}
-                    <a
-                      href="https://www.facebook.com/profile.php?id=61574425607753"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="contact__demo-link"
-                    >
-                      Facebook
-                    </a>.
-                  </p>
-                  <button className="btn btn-secondary" onClick={handleReset}>
-                    Volver al formulario
-                  </button>
-                </motion.div>
-              ) : (
-                <motion.form
-                  key="form"
-                  className="contact__form"
-                  onSubmit={handleSubmit}
-                  noValidate
-                  aria-label="Formulario de contacto SuperNova Lab SV"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
+                  <option value="">Selecciona una opción</option>
+                  {profileOptions.map(opt => (
+                    <option key={opt} value={opt}>{opt}</option>
+                  ))}
+                </select>
+                {errors.profile && (
+                  <span id="profile-error" className="form-error" role="alert">{errors.profile}</span>
+                )}
+              </div>
+
+              {/* Interest */}
+              <div className={`form-field ${errors.interest ? 'form-field--error' : ''}`}>
+                <label htmlFor="contact-interest" className="form-label">Me interesa</label>
+                <select
+                  id="contact-interest"
+                  name="interest"
+                  className="form-select"
+                  value={form.interest}
+                  onChange={handleChange}
+                  aria-required="true"
+                  aria-describedby={errors.interest ? 'interest-error' : undefined}
                 >
-                  {/* Name */}
-                  <div className={`form-field ${errors.name ? 'form-field--error' : ''}`}>
-                    <label htmlFor="contact-name" className="form-label">Nombre</label>
-                    <input
-                      id="contact-name"
-                      name="name"
-                      type="text"
-                      className="form-input"
-                      value={form.name}
-                      onChange={handleChange}
-                      placeholder="Tu nombre completo"
-                      aria-required="true"
-                      aria-describedby={errors.name ? 'name-error' : undefined}
-                    />
-                    {errors.name && (
-                      <span id="name-error" className="form-error" role="alert">{errors.name}</span>
-                    )}
-                  </div>
+                  <option value="">Selecciona una opción</option>
+                  {interestOptions.map(opt => (
+                    <option key={opt} value={opt}>{opt}</option>
+                  ))}
+                </select>
+                {errors.interest && (
+                  <span id="interest-error" className="form-error" role="alert">{errors.interest}</span>
+                )}
+              </div>
 
-                  {/* Email */}
-                  <div className={`form-field ${errors.email ? 'form-field--error' : ''}`}>
-                    <label htmlFor="contact-email" className="form-label">Correo electrónico</label>
-                    <input
-                      id="contact-email"
-                      name="email"
-                      type="email"
-                      className="form-input"
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="tu@correo.com"
-                      aria-required="true"
-                      aria-describedby={errors.email ? 'email-error' : undefined}
-                    />
-                    {errors.email && (
-                      <span id="email-error" className="form-error" role="alert">{errors.email}</span>
-                    )}
-                  </div>
+              {/* Message */}
+              <div className="form-field">
+                <label htmlFor="contact-message" className="form-label">
+                  Mensaje <span className="form-optional">(opcional)</span>
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  className="form-textarea"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Cuéntanos más sobre lo que necesitas..."
+                  rows={4}
+                />
+              </div>
 
-                  {/* Profile */}
-                  <div className={`form-field ${errors.profile ? 'form-field--error' : ''}`}>
-                    <label htmlFor="contact-profile" className="form-label">Soy...</label>
-                    <select
-                      id="contact-profile"
-                      name="profile"
-                      className="form-select"
-                      value={form.profile}
-                      onChange={handleChange}
-                      aria-required="true"
-                      aria-describedby={errors.profile ? 'profile-error' : undefined}
-                    >
-                      <option value="">Selecciona una opción</option>
-                      {profileOptions.map(opt => (
-                        <option key={opt} value={opt}>{opt}</option>
-                      ))}
-                    </select>
-                    {errors.profile && (
-                      <span id="profile-error" className="form-error" role="alert">{errors.profile}</span>
-                    )}
-                  </div>
+              {/* Form Action Buttons */}
+              <div className="contact__actions">
+                <button
+                  type="button"
+                  className="btn btn-whatsapp contact__submit-wa"
+                  onClick={handleSendWhatsApp}
+                  aria-label="Enviar consulta por WhatsApp"
+                >
+                  <WhatsAppIcon size={18} />
+                  Enviar consulta por WhatsApp
+                </button>
 
-                  {/* Interest */}
-                  <div className={`form-field ${errors.interest ? 'form-field--error' : ''}`}>
-                    <label htmlFor="contact-interest" className="form-label">Me interesa</label>
-                    <select
-                      id="contact-interest"
-                      name="interest"
-                      className="form-select"
-                      value={form.interest}
-                      onChange={handleChange}
-                      aria-required="true"
-                      aria-describedby={errors.interest ? 'interest-error' : undefined}
-                    >
-                      <option value="">Selecciona una opción</option>
-                      {interestOptions.map(opt => (
-                        <option key={opt} value={opt}>{opt}</option>
-                      ))}
-                    </select>
-                    {errors.interest && (
-                      <span id="interest-error" className="form-error" role="alert">{errors.interest}</span>
-                    )}
-                  </div>
+                <button
+                  type="button"
+                  className="btn btn-secondary contact__submit-email"
+                  onClick={handleSendEmail}
+                  aria-label="Enviar por correo electrónico"
+                >
+                  <Mail size={18} />
+                  Enviar por correo
+                </button>
+              </div>
 
-                  {/* Message */}
-                  <div className="form-field">
-                    <label htmlFor="contact-message" className="form-label">
-                      Mensaje <span className="form-optional">(opcional)</span>
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      name="message"
-                      className="form-textarea"
-                      value={form.message}
-                      onChange={handleChange}
-                      placeholder="Cuéntanos más sobre lo que necesitas..."
-                      rows={4}
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="btn btn-primary contact__submit"
-                    disabled={submitting}
-                    aria-label="Enviar mensaje de contacto"
-                  >
-                    {submitting ? (
-                      <>
-                        <div className="contact__spinner" aria-hidden="true" />
-                        Enviando...
-                      </>
-                    ) : (
-                      <>
-                        <Send size={16} />
-                        Enviar mensaje
-                      </>
-                    )}
-                  </button>
-                </motion.form>
-              )}
-            </AnimatePresence>
+              <p className="contact__email-note">
+                * El botón de correo abrirá tu aplicación de email preferida con la solicitud estructurada.
+              </p>
+            </form>
           </motion.div>
         </motion.div>
       </div>

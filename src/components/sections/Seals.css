@@ -1,5 +1,5 @@
 .seals {
-  padding: 4rem 0;
+  padding: 4.5rem 0;
   position: relative;
   z-index: 2;
 }
@@ -7,15 +7,15 @@
 .seals__grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
   justify-items: center;
   align-items: center;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 540px) {
   .seals__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 1.5rem;
+    gap: 2.5rem 2rem;
   }
 }
 
@@ -26,64 +26,89 @@
   }
 }
 
-/* Individual Seal Card */
-.seal-card {
+/* Institutional Badge Container */
+.inst-seal-card {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 250px;
+  max-width: 270px;
   background: transparent; /* Strictly transparent exterior */
 }
 
-/* Perfect Circular Container */
-.seal-circle {
+.inst-seal-badge {
   position: relative;
-  width: 230px;
-  height: 230px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 30%, rgba(15, 23, 42, 0.95), rgba(6, 11, 25, 0.98));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
-              inset 0 0 20px rgba(0, 240, 255, 0.05);
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65),
+              0 0 25px rgba(0, 240, 255, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.seal-card:hover .seal-circle {
-  box-shadow: 0 15px 35px rgba(0, 240, 255, 0.15),
-              inset 0 0 25px rgba(0, 240, 255, 0.1);
+.inst-seal-card:hover .inst-seal-badge {
+  box-shadow: 0 18px 45px rgba(0, 240, 255, 0.2),
+              0 0 35px rgba(138, 43, 226, 0.25);
 }
 
-/* SVG Rings Overlay */
-.seal-svg {
+/* SVG Overlay */
+.inst-seal-svg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  overflow: visible;
 }
 
-.seal-ring-outer {
+/* Rings */
+.inst-ring-outer {
   fill: none;
   stroke: var(--cyan-electric);
-  stroke-width: 2;
-  opacity: 0.85;
+  stroke-width: 3.5;
 }
 
-.seal-ring-dashed {
+.inst-ring-secondary {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.45);
+  stroke-width: 1.5;
+}
+
+.inst-ring-dashed {
   fill: none;
   stroke: var(--cyan-electric);
   stroke-width: 1.5;
-  stroke-dasharray: 6 5;
-  opacity: 0.6;
+  stroke-dasharray: 5 4;
+  opacity: 0.7;
 }
 
-/* Content inside circle */
-.seal-content {
+/* SVG Curved Text */
+.inst-text-curved {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  fill: #f1f5f9;
+}
+
+.inst-text-curved--top {
+  fill: #ffffff;
+}
+
+.inst-text-curved--bottom {
+  fill: rgba(0, 240, 255, 0.9);
+}
+
+.inst-star {
+  font-size: 0.75rem;
+  fill: var(--cyan-electric);
+}
+
+/* Center Content */
+.inst-seal-center {
   position: relative;
   z-index: 2;
   display: flex;
@@ -91,12 +116,12 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 1.25rem;
+  padding: 1rem 1.5rem 2rem;
   width: 100%;
   height: 100%;
 }
 
-.seal-icon-wrap {
+.inst-seal-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,10 +129,10 @@
   height: 44px;
   margin-bottom: 0.35rem;
   color: var(--cyan-electric);
-  filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
+  filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.5));
 }
 
-.seal-title {
+.inst-seal-title {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,46 +140,84 @@
   margin-bottom: 0.35rem;
 }
 
-.seal-title__main {
+.inst-seal-title__main {
   font-family: var(--font-primary);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--text-bright);
+  color: #ffffff;
 }
 
-.seal-title__cyan {
+.inst-seal-title__cyan {
   font-family: var(--font-primary);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: var(--cyan-electric);
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
 }
 
-.seal-subtext {
+.inst-seal-subtext {
   font-size: 0.68rem;
   line-height: 1.25;
   color: var(--text-muted);
-  max-width: 170px;
+  max-width: 155px;
   margin: 0;
 }
 
-/* Mobile fine-tuning */
-@media (max-width: 380px) {
-  .seal-circle {
-    width: 200px;
-    height: 200px;
+/* Ribbon / Placa COMPROMISO SUPERNOVA */
+.inst-seal-ribbon {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 0.25rem 0.85rem;
+  background: linear-gradient(135deg, #091224 0%, #0d1a38 100%);
+  border: 1px solid var(--cyan-electric);
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(138, 43, 226, 0.35),
+              0 0 6px rgba(0, 240, 255, 0.3);
+  white-space: nowrap;
+}
+
+.inst-seal-ribbon__text {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* Mobile responsive tuning */
+@media (max-width: 400px) {
+  .inst-seal-badge {
+    width: 230px;
+    height: 230px;
   }
 
-  .seal-icon-wrap {
-    width: 38px;
-    height: 38px;
-    margin-bottom: 0.25rem;
+  .inst-text-curved {
+    font-size: 0.52rem;
   }
 
-  .seal-subtext {
-    font-size: 0.65rem;
-    max-width: 150px;
+  .inst-seal-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0.2rem;
+  }
+
+  .inst-seal-subtext {
+    font-size: 0.62rem;
+    max-width: 140px;
+  }
+
+  .inst-seal-ribbon {
+    bottom: 12px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  .inst-seal-ribbon__text {
+    font-size: 0.52rem;
   }
 }

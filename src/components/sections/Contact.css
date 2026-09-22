@@ -38,41 +38,101 @@
   line-height: 1.8;
 }
 
-.contact__items {
+/* Direct Action Hero Button */
+.contact__direct-action {
+  margin: 0.5rem 0;
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff;
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+  font-weight: 600;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #2be270 0%, #15a090 100%);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.55);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.contact__wa-main-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  font-size: 1.05rem;
+  border-radius: var(--radius-md);
+}
+
+/* Channel Cards */
+.contact__channels {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-}
-
-.contact__item {
-  display: flex;
-  align-items: flex-start;
   gap: 1rem;
+  margin-top: 0.5rem;
 }
 
-.contact__item-dot {
-  width: 8px;
-  height: 8px;
+.contact__channel-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.1rem 1.35rem;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.contact__channel-card:hover {
+  border-color: rgba(0, 240, 255, 0.4);
+  background: rgba(15, 23, 42, 0.85);
+  transform: translateX(4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+.contact__channel-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: var(--gradient-primary);
   flex-shrink: 0;
-  margin-top: 0.4rem;
-  box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
 }
 
-.contact__item-label {
-  font-family: var(--font-primary);
-  font-size: var(--text-sm);
+.contact__channel-icon--wa {
+  background: rgba(37, 211, 102, 0.15);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  color: #25D366;
+}
+
+.contact__channel-icon--email {
+  background: rgba(0, 240, 255, 0.15);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  color: var(--cyan-electric);
+}
+
+.contact__channel-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.15rem;
+}
+
+.contact__channel-value {
+  display: block;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--white);
-  display: block;
-  margin-bottom: 0.2rem;
-}
-
-.contact__item-desc {
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
-  line-height: 1.6;
 }
 
 /* Form wrap */
@@ -183,81 +243,40 @@
   gap: 0.35rem;
 }
 
-/* Submit */
-.contact__submit {
-  width: 100%;
-  justify-content: center;
-  margin-top: 0.5rem;
-  padding: 1rem;
-  font-size: var(--text-base);
-}
-
-.contact__submit:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-/* Spinner */
-.contact__spinner {
-  width: 18px;
-  height: 18px;
-  border: 2px solid rgba(5, 7, 13, 0.3);
-  border-top-color: rgba(5, 7, 13, 0.8);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-/* Demo message */
-.contact__demo-msg {
+/* Actions */
+.contact__actions {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-  padding: 1rem 0;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
 }
 
-.contact__demo-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: rgba(251, 191, 36, 0.1);
-  border: 1px solid rgba(251, 191, 36, 0.25);
-  display: flex;
-  align-items: center;
+@media (min-width: 600px) {
+  .contact__actions {
+    flex-direction: row;
+  }
+}
+
+.contact__submit-wa {
+  flex: 1;
   justify-content: center;
-  color: #FCD34D;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.95rem;
 }
 
-.contact__demo-msg h3 {
-  font-size: var(--text-xl);
-  color: var(--white);
+.contact__submit-email {
+  flex: 1;
+  justify-content: center;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.95rem;
 }
 
-.contact__demo-msg p {
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-.contact__demo-note {
-  font-size: var(--text-sm);
+.contact__email-note {
+  font-size: 0.75rem;
   color: var(--text-muted);
-}
-
-.contact__demo-link {
-  color: var(--cyan);
-  text-decoration: underline;
-  text-decoration-color: rgba(0, 229, 255, 0.3);
-  transition: color var(--transition-fast);
-}
-
-.contact__demo-link:hover {
-  color: var(--blue-electric);
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 0.25rem;
 }
 
 /* Responsive */

@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Send, AlertCircle } from 'lucide-react';
 import { useScrollAnimation, fadeUpVariants, staggerContainerVariants } from '../../hooks/useScrollAnimation';
 import './Contact.css';
 
@@ -20,14 +20,25 @@ function validateForm(data) {
   return errors;
 }
 
-export default function Contact() {
+export default function Contact({ prefillData }) {
   const { ref, isInView } = useScrollAnimation();
   const [form, setForm] = useState({
     name: '', email: '', profile: '', interest: '', message: '',
   });
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState(null); // null | 'success' | 'error'
+  const [status, setStatus] = useState(null); // null | 'demo'
   const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (prefillData) {
+      setForm(prev => ({
+        ...prev,
+        interest: prefillData.interest || 'Cursos',
+        message: prefillData.message || prev.message,
+      }));
+      setErrors(prev => ({ ...prev, interest: '' }));
+    }
+  }, [prefillData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,7 +54,7 @@ export default function Contact() {
       return;
     }
     setSubmitting(true);
-    // Simulate async (no real backend)
+    // Simulate async
     await new Promise(r => setTimeout(r, 1200));
     setSubmitting(false);
     setStatus('demo');

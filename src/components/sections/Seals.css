@@ -1,0 +1,160 @@
+.seals {
+  padding: 4rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.seals__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+@media (min-width: 480px) {
+  .seals__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .seals__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Individual Seal Card */
+.seal-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 250px;
+  background: transparent; /* Strictly transparent exterior */
+}
+
+/* Perfect Circular Container */
+.seal-circle {
+  position: relative;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 30%, rgba(15, 23, 42, 0.95), rgba(6, 11, 25, 0.98));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+              inset 0 0 20px rgba(0, 240, 255, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.seal-card:hover .seal-circle {
+  box-shadow: 0 15px 35px rgba(0, 240, 255, 0.15),
+              inset 0 0 25px rgba(0, 240, 255, 0.1);
+}
+
+/* SVG Rings Overlay */
+.seal-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.seal-ring-outer {
+  fill: none;
+  stroke: var(--cyan-electric);
+  stroke-width: 2;
+  opacity: 0.85;
+}
+
+.seal-ring-dashed {
+  fill: none;
+  stroke: var(--cyan-electric);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 5;
+  opacity: 0.6;
+}
+
+/* Content inside circle */
+.seal-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.25rem;
+  width: 100%;
+  height: 100%;
+}
+
+.seal-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 0.35rem;
+  color: var(--cyan-electric);
+  filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
+}
+
+.seal-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.15;
+  margin-bottom: 0.35rem;
+}
+
+.seal-title__main {
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-bright);
+}
+
+.seal-title__cyan {
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--cyan-electric);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.seal-subtext {
+  font-size: 0.68rem;
+  line-height: 1.25;
+  color: var(--text-muted);
+  max-width: 170px;
+  margin: 0;
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 380px) {
+  .seal-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .seal-icon-wrap {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 0.25rem;
+  }
+
+  .seal-subtext {
+    font-size: 0.65rem;
+    max-width: 150px;
+  }
+}

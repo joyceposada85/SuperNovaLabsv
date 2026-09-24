@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import LogoMark from '../common/LogoMark';
 import './Header.css';
 
 const navLinks = [
@@ -43,9 +44,7 @@ export default function Header() {
             aria-label="SuperNova Lab SV — Inicio"
             onClick={(e) => { e.preventDefault(); handleNavClick('#inicio'); }}
           >
-            <div className="header__logo-icon" aria-hidden="true">
-              <Zap size={18} />
-            </div>
+            <LogoMark size={40} className="header__logo-icon" />
             <div className="header__logo-text">
               <span className="header__logo-name">SuperNova</span>
               <span className="header__logo-sub">Lab SV</span>

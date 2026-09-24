@@ -1,4 +1,5 @@
-import { Zap, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import LogoMark from '../common/LogoMark';
 import './Footer.css';
 
 function FacebookIcon({ size = 18 }) {
@@ -57,9 +58,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="footer__brand">
             <div className="footer__logo">
-              <div className="footer__logo-icon" aria-hidden="true">
-                <Zap size={16} />
-              </div>
+              <LogoMark size={34} className="footer__logo-icon" />
               <div className="footer__logo-text">
                 <span className="footer__logo-name">SuperNova</span>
                 <span className="footer__logo-sub">Lab SV</span>

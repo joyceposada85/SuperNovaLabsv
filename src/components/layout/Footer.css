@@ -38,16 +38,8 @@
 }
 
 .footer__logo-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: var(--gradient-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--bg-deep);
+  display: block;
   flex-shrink: 0;
-  box-shadow: 0 0 12px rgba(0, 140, 255, 0.35);
 }
 
 .footer__logo-text {

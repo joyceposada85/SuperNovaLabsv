@@ -37,15 +37,7 @@
 }
 
 .header__logo-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: var(--gradient-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--bg-deep);
-  box-shadow: 0 0 15px rgba(0, 140, 255, 0.4);
+  display: block;
   flex-shrink: 0;
 }
 

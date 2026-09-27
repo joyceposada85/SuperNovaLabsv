@@ -37,7 +37,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
   const PHONE_NUMBER = '50362953409';
   const DISPLAY_PHONE = '+503 6295-3409';
-  const CONTACT_EMAIL = 'supernovalabsv@gmail.com';
+  const CONTACT_EMAIL = 'info@supernovalabsv.com';
 
   const handleNavClick = (e, href) => {
     e.preventDefault();

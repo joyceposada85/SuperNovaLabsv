@@ -83,17 +83,31 @@
   box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
 }
 
-.lab__area-label {
+.lab__area-text {
   flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.lab__area-label {
   font-family: var(--font-primary);
   font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-weight: 600;
+  color: var(--white);
   transition: color var(--transition-fast);
 }
 
+.lab__area-desc {
+  font-family: var(--font-secondary);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
 .lab__area:hover .lab__area-label {
-  color: var(--white);
+  color: var(--cyan);
 }
 
 .lab__area-arrow {

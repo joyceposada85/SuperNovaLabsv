@@ -1,15 +1,39 @@
 import { motion } from 'framer-motion';
-import { Wrench, Monitor, FlaskConical, Plug, BrainCircuit, MessagesSquare, ArrowRight } from 'lucide-react';
+import { Wrench, Monitor, FileSpreadsheet, Bot, BrainCircuit, Compass, ArrowRight } from 'lucide-react';
 import { useScrollAnimation, fadeUpVariants, staggerContainerVariants, cardVariants } from '../../hooks/useScrollAnimation';
 import './Lab.css';
 
 const labAreas = [
-  { icon: Wrench, label: 'Automatización de procesos' },
-  { icon: Monitor, label: 'Soluciones de software' },
-  { icon: FlaskConical, label: 'Prototipos digitales' },
-  { icon: Plug, label: 'Integración de herramientas' },
-  { icon: BrainCircuit, label: 'IA aplicada' },
-  { icon: MessagesSquare, label: 'Consultoría tecnológica' },
+  {
+    icon: Wrench,
+    label: 'Automatización de procesos',
+    desc: 'Flujos que hacen solas las tareas repetitivas: reportes, correos, registros.',
+  },
+  {
+    icon: BrainCircuit,
+    label: 'Agentes de IA con tus documentos',
+    desc: 'Asistentes que responden preguntas con la información de tu empresa.',
+  },
+  {
+    icon: FileSpreadsheet,
+    label: 'Extracción de datos de documentos',
+    desc: 'Facturas, formularios o PDFs convertidos en tablas listas para usar.',
+  },
+  {
+    icon: Bot,
+    label: 'Chatbots para web y plataformas',
+    desc: 'Asistentes integrados en tu sitio, Moodle o WhatsApp.',
+  },
+  {
+    icon: Monitor,
+    label: 'Aplicaciones a la medida',
+    desc: 'Desde un prototipo rápido hasta una app web completa.',
+  },
+  {
+    icon: Compass,
+    label: 'Consultoría en IA',
+    desc: 'Te ayudamos a identificar dónde la IA te ahorra tiempo y dinero.',
+  },
 ];
 
 export default function Lab() {
@@ -78,7 +102,10 @@ export default function Lab() {
                   <div className="lab__area-icon" aria-hidden="true">
                     <Icon size={18} />
                   </div>
-                  <span className="lab__area-label">{area.label}</span>
+                  <div className="lab__area-text">
+                    <span className="lab__area-label">{area.label}</span>
+                    <span className="lab__area-desc">{area.desc}</span>
+                  </div>
                   <div className="lab__area-arrow" aria-hidden="true">
                     <ArrowRight size={14} />
                   </div>

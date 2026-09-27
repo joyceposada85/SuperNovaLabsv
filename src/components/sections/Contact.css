@@ -251,21 +251,22 @@
   margin-top: 0.5rem;
 }
 
-@media (min-width: 600px) {
-  .contact__actions {
-    flex-direction: row;
-  }
-}
 
 .contact__submit-wa {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  white-space: normal;
+  text-align: center;
   justify-content: center;
   padding: 0.85rem 1.25rem;
   font-size: 0.95rem;
 }
 
 .contact__submit-email {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  white-space: normal;
+  text-align: center;
   justify-content: center;
   padding: 0.85rem 1.25rem;
   font-size: 0.95rem;

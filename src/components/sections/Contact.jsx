@@ -280,7 +280,7 @@ Mensaje: ${form.message.trim() || 'Sin mensaje adicional'}`;
                   aria-label="Enviar consulta por WhatsApp"
                 >
                   <WhatsAppIcon size={18} />
-                  Enviar consulta por WhatsApp
+                  Enviar por WhatsApp
                 </button>
 
                 <button

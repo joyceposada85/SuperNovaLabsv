@@ -96,7 +96,6 @@ export default function Lab() {
                   key={area.label}
                   className="lab__area"
                   variants={cardVariants}
-                  whileHover={{ x: 6, transition: { duration: 0.2 } }}
                   role="listitem"
                 >
                   <div className="lab__area-icon" aria-hidden="true">
@@ -105,9 +104,6 @@ export default function Lab() {
                   <div className="lab__area-text">
                     <span className="lab__area-label">{area.label}</span>
                     <span className="lab__area-desc">{area.desc}</span>
-                  </div>
-                  <div className="lab__area-arrow" aria-hidden="true">
-                    <ArrowRight size={14} />
                   </div>
                 </motion.div>
               );

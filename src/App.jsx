@@ -4,6 +4,7 @@ import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
 import Intro from './components/sections/Intro';
 import Routes from './components/sections/Routes';
+import Certificate from './components/sections/Certificate';
 import Philosophy from './components/sections/Philosophy';
 import Enterprise from './components/sections/Enterprise';
 import Lab from './components/sections/Lab';
@@ -36,6 +37,7 @@ function App() {
         <Hero />
         <Intro />
         <Routes onRequestCourseInfo={handleRequestCourseInfo} />
+        <Certificate />
         <Philosophy />
         <Enterprise />
         <Lab />

@@ -6,3 +6,4 @@
 - 2026-10-17 | Caso de uso: RRHH con IA (filtrar CVs, perfiles de puesto, planillas en Excel, onboarding automatizado) | CTA cotización / mensaje
 - 2026-10-18 | Tip rápido: la fórmula de un buen prompt (rol, contexto, tarea, formato) | CTA cotización / mensaje
 - 2026-10-19 | Pregunta gancho: automatización de procesos con n8n (correos→Excel, reportes automáticos, formularios→CRM, alertas) | CTA cotización / mensaje
+- 2026-10-20 | Tip/checklist: protección de datos al usar IA en la oficina (anonimizar, cuentas empresariales, política de uso, revisar antes de compartir) | CTA cotización / mensaje

@@ -8,3 +8,4 @@
 - 2026-10-19 | Pregunta gancho: automatización de procesos con n8n (correos→Excel, reportes automáticos, formularios→CRM, alertas) | CTA cotización / mensaje
 - 2026-10-20 | Tip/checklist: protección de datos al usar IA en la oficina (anonimizar, cuentas empresariales, política de uso, revisar antes de compartir) | CTA cotización / mensaje
 - 2026-10-21 | Dato/beneficio: tu jornada de oficina con Microsoft 365 Copilot (Outlook, Teams, Word, Excel) | CTA cotización / mensaje
+- 2026-10-22 | Caso de uso: atención al cliente con IA (respuestas a correos/chats, resumen de reclamos, FAQ y guiones, reportes de satisfacción) | CTA mensaje / cotización

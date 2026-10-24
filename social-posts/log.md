@@ -10,3 +10,4 @@
 - 2026-10-21 | Dato/beneficio: tu jornada de oficina con Microsoft 365 Copilot (Outlook, Teams, Word, Excel) | CTA cotización / mensaje
 - 2026-10-22 | Caso de uso: atención al cliente con IA (respuestas a correos/chats, resumen de reclamos, FAQ y guiones, reportes de satisfacción) | CTA mensaje / cotización
 - 2026-10-23 | Pregunta gancho: IA para equipos de ventas (cotizaciones, reportes en Excel, seguimiento a clientes, correos personalizados) | CTA mensaje / cotización
+- 2026-10-24 | Antes vs. después: logística con IA (inventario y alertas en Excel, pedidos automatizados, reporte diario automático) | CTA mensaje / cotización

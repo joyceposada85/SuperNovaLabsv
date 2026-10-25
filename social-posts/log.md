@@ -11,3 +11,4 @@
 - 2026-10-22 | Caso de uso: atención al cliente con IA (respuestas a correos/chats, resumen de reclamos, FAQ y guiones, reportes de satisfacción) | CTA mensaje / cotización
 - 2026-10-23 | Pregunta gancho: IA para equipos de ventas (cotizaciones, reportes en Excel, seguimiento a clientes, correos personalizados) | CTA mensaje / cotización
 - 2026-10-24 | Antes vs. después: logística con IA (inventario y alertas en Excel, pedidos automatizados, reporte diario automático) | CTA mensaje / cotización
+- 2026-10-25 | Tip rápido: Excel con IA, pedile la fórmula a la IA (ejemplo SI + HOY para vencimientos) | CTA mensaje / cotización

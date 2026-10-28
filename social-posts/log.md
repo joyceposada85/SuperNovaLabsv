@@ -14,3 +14,4 @@
 - 2026-10-25 | Tip rápido: Excel con IA, pedile la fórmula a la IA (ejemplo SI + HOY para vencimientos) | CTA mensaje / cotización
 - 2026-10-26 | Checklist: 4 señales de que tu equipo necesita capacitación en IA (reportes lentos, copiar/pegar, IA sin reglas, Copilot subutilizado) | CTA cotización / mensaje
 - 2026-10-27 | Caso de uso: IA en cooperativas (análisis de cartera en Excel, informes para la junta, respuestas a asociados, datos de asociados seguros) | CTA mensaje / cotización
+- 2026-10-28 | Dato/beneficio: hacé la cuenta de las horas que tu equipo pierde en tareas repetitivas (15 min × 22 días = 5.5 h/persona; 55 h/mes en equipo de 10) | CTA cotización / mensaje

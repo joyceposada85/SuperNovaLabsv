@@ -16,3 +16,4 @@
 - 2026-10-27 | Caso de uso: IA en cooperativas (análisis de cartera en Excel, informes para la junta, respuestas a asociados, datos de asociados seguros) | CTA mensaje / cotización
 - 2026-10-28 | Dato/beneficio: hacé la cuenta de las horas que tu equipo pierde en tareas repetitivas (15 min × 22 días = 5.5 h/persona; 55 h/mes en equipo de 10) | CTA cotización / mensaje
 - 2026-10-29 | Tip/checklist: 4 errores al usar IA en la oficina y cómo evitarlos (no revisar, pedir sin contexto, pegar datos confidenciales, sin prácticas comunes) | CTA cotización / mensaje
+- 2026-10-30 | Antes vs. después: reuniones con IA y Microsoft 365 (actas y resúmenes en minutos, tareas con responsable y fecha, seguimiento redactado por la IA) | CTA mensaje / cotización

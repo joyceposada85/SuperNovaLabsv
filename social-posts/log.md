@@ -18,3 +18,4 @@
 - 2026-10-29 | Tip/checklist: 4 errores al usar IA en la oficina y cómo evitarlos (no revisar, pedir sin contexto, pegar datos confidenciales, sin prácticas comunes) | CTA cotización / mensaje
 - 2026-10-30 | Antes vs. después: reuniones con IA y Microsoft 365 (actas y resúmenes en minutos, tareas con responsable y fecha, seguimiento redactado por la IA) | CTA mensaje / cotización
 - 2026-10-31 | Así trabajamos: capacitación a la medida en 4 pasos (diagnóstico, programa a la medida, práctica con casos reales, seguimiento) | CTA cotización / mensaje
+- 2026-11-01 | Tip rápido: 3 prompts para usar hoy en la oficina (resumir correos, notas de reunión a tabla de tareas, explicar/mejorar fórmulas de Excel) | CTA cotización / mensaje

@@ -21,3 +21,4 @@
 - 2026-11-01 | Tip rápido: 3 prompts para usar hoy en la oficina (resumir correos, notas de reunión a tabla de tareas, explicar/mejorar fórmulas de Excel) | CTA cotización / mensaje
 - 2026-11-02 | Mito vs. realidad: automatización de procesos con n8n no es solo para empresas grandes (no hay que programar, se empieza con un proceso, libera horas en vez de reemplazar personal) | CTA mensaje / cotización
 - 2026-11-03 | Tip rápido: 4 cosas que la IA hace por vos en Excel (limpiar y ordenar datos, tablas dinámicas, gráficos en segundos, detectar errores y duplicados) | CTA mensaje / cotización
+- 2026-11-05 | Pregunta gancho / caso de uso: IA y Excel en contabilidad y finanzas (conciliaciones, análisis de gastos, revisión de facturas, informes financieros) | CTA mensaje / cotización

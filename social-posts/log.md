@@ -24,3 +24,4 @@
 - 2026-11-05 | Pregunta gancho / caso de uso: IA y Excel en contabilidad y finanzas (conciliaciones, análisis de gastos, revisión de facturas, informes financieros) | CTA mensaje / cotización
 - 2026-11-06 | Antes vs. después: IA aprendida por cuenta propia vs. capacitación en equipo (herramientas dispersas vs. método común, datos en riesgo vs. reglas de uso seguro, resultados sin revisar vs. casos reales del área) | CTA cotización / mensaje
 - 2026-11-07 | Pregunta gancho / caso de uso: reporte semanal automático con IA y n8n en 3 pasos (recoge datos de Excel/formularios/correos, la IA resume totales y alertas, llega cada lunes por correo o Teams) | CTA mensaje / cotización
+- 2026-11-09 | Pregunta gancho / protección de datos: ¿tu empresa ya tiene reglas para usar IA? (qué datos no se comparten, herramientas aprobadas, revisión humana, equipo capacitado) | CTA mensaje / cotización

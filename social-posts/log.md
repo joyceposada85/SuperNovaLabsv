@@ -26,3 +26,4 @@
 - 2026-11-07 | Pregunta gancho / caso de uso: reporte semanal automático con IA y n8n en 3 pasos (recoge datos de Excel/formularios/correos, la IA resume totales y alertas, llega cada lunes por correo o Teams) | CTA mensaje / cotización
 - 2026-11-09 | Pregunta gancho / protección de datos: ¿tu empresa ya tiene reglas para usar IA? (qué datos no se comparten, herramientas aprobadas, revisión humana, equipo capacitado) | CTA mensaje / cotización
 - 2026-11-10 | Mito vs. realidad: 3 mitos de la IA en la oficina (no reemplaza al equipo, no hay que programar, no solo redacta: analiza Excel, resume y automatiza) | CTA mensaje / cotización
+- 2026-11-11 | Tip rápido: Copilot en Outlook, tu bandeja de entrada bajo control (resumir hilos largos, respuestas con el tono justo, preparar reuniones, priorizar lo urgente) | CTA mensaje / cotización

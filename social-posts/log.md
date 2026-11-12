@@ -27,3 +27,4 @@
 - 2026-11-09 | Pregunta gancho / protección de datos: ¿tu empresa ya tiene reglas para usar IA? (qué datos no se comparten, herramientas aprobadas, revisión humana, equipo capacitado) | CTA mensaje / cotización
 - 2026-11-10 | Mito vs. realidad: 3 mitos de la IA en la oficina (no reemplaza al equipo, no hay que programar, no solo redacta: analiza Excel, resume y automatiza) | CTA mensaje / cotización
 - 2026-11-11 | Tip rápido: Copilot en Outlook, tu bandeja de entrada bajo control (resumir hilos largos, respuestas con el tono justo, preparar reuniones, priorizar lo urgente) | CTA mensaje / cotización
+- 2026-11-12 | Caso de uso: IA y Excel en el área de compras (comparar cotizaciones en Excel, correos a proveedores, resumir contratos y condiciones, seguimiento automático de órdenes) | CTA mensaje / cotización

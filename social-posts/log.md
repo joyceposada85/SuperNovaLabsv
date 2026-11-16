@@ -31,3 +31,4 @@
 - 2026-11-13 | Tip rápido: de informe a presentación con Copilot en Word y PowerPoint (borradores de informes, resumir documentos largos, presentación desde un Word, diapositivas con notas) | CTA mensaje / cotización
 - 2026-11-14 | Tip rápido: la fórmula de un buen prompt en 4 partes (rol, contexto, tarea, formato) | CTA mensaje / cotización
 - 2026-11-15 | Antes vs. después: atención al cliente con IA (respuestas claras en minutos, plantillas con el tono de la marca, reportes de casos frecuentes) | CTA mensaje / cotización
+- 2026-11-16 | Caso de uso: marketing y comunicaciones con IA (calendario de contenido, textos con tono de marca, métricas claras en Excel, ideas de campaña en minutos) | CTA mensaje / cotización

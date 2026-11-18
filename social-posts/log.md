@@ -33,3 +33,4 @@
 - 2026-11-15 | Antes vs. después: atención al cliente con IA (respuestas claras en minutos, plantillas con el tono de la marca, reportes de casos frecuentes) | CTA mensaje / cotización
 - 2026-11-16 | Caso de uso: marketing y comunicaciones con IA (calendario de contenido, textos con tono de marca, métricas claras en Excel, ideas de campaña en minutos) | CTA mensaje / cotización
 - 2026-11-17 | Checklist / pregunta gancho: 4 señales de que tu equipo necesita capacitación en IA (copian y pegan datos a mano, reportes que tardan horas, usan IA sin reglas claras, Excel solo para lo básico) | CTA mensaje / cotización
+- 2026-11-18 | Pregunta gancho / caso de uso por sector: IA para cooperativas (respuestas ágiles a asociados, análisis de cartera en Excel, informes para comités, solicitudes automatizadas) | CTA mensaje / cotización

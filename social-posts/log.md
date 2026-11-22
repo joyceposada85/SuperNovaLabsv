@@ -36,3 +36,4 @@
 - 2026-11-18 | Pregunta gancho / caso de uso por sector: IA para cooperativas (respuestas ágiles a asociados, análisis de cartera en Excel, informes para comités, solicitudes automatizadas) | CTA mensaje / cotización
 - 2026-11-19 | Caso de uso: RRHH con IA, menos papeleo más personas (encuestas de clima, evaluaciones de desempeño, comunicados internos, políticas resumidas) | CTA mensaje / cotización
 - 2026-11-20 | Caso de uso: logística e inventarios con IA y Excel (alertas de stock bajo, pronóstico de demanda, entregas organizadas, reportes automáticos) | CTA mensaje / cotización
+- 2026-11-21 | Tip rápido: Excel + IA, pedile la fórmula a la IA (ejemplo de prompt → =SI(B2<HOY();"Vencida";"Al día")) | CTA mensaje / cotización

@@ -38,3 +38,4 @@
 - 2026-11-20 | Caso de uso: logística e inventarios con IA y Excel (alertas de stock bajo, pronóstico de demanda, entregas organizadas, reportes automáticos) | CTA mensaje / cotización
 - 2026-11-21 | Tip rápido: Excel + IA, pedile la fórmula a la IA (ejemplo de prompt → =SI(B2<HOY();"Vencida";"Al día")) | CTA mensaje / cotización
 - 2026-11-22 | Caso de uso / temporada: cierre de año en ventas con IA y Excel (análisis de ventas del año, clientes para reactivar, metas 2027 con proyecciones, propuestas en minutos) | CTA mensaje / cotización
+- 2026-11-23 | Antes vs. después: facturas por correo con n8n + IA, de horas a minutos (adjuntos se guardan solos, la IA pasa los datos a Excel, alertas si algo no cuadra, reporte listo cada mañana) | CTA mensaje / cotización

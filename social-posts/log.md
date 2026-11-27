@@ -41,3 +41,4 @@
 - 2026-11-23 | Antes vs. después: facturas por correo con n8n + IA, de horas a minutos (adjuntos se guardan solos, la IA pasa los datos a Excel, alertas si algo no cuadra, reporte listo cada mañana) | CTA mensaje / cotización
 - 2026-11-24 | Tip rápido: Copilot en Teams, reuniones que terminan en acuerdos claros (resumen al terminar, tareas y responsables, ponerse al día si llegaste tarde, correo de seguimiento listo) | CTA mensaje / cotización
 - 2026-11-25 | Checklist / protección de datos: antes de pegarlo en la IA, pensalo dos veces (4 cosas que no se comparten en un chat de IA público: datos personales de clientes, contraseñas y accesos, información financiera, contratos y estrategias) | CTA mensaje / cotización
+- 2026-11-26 | Pregunta gancho / temporada: ¿ya incluiste la capacitación en IA en tu plan 2027? (diagnóstico por área, programa a la medida, casos reales de tu empresa, calendario listo para 2027) | CTA cotización / mensaje

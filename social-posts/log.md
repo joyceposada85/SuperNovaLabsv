@@ -42,3 +42,4 @@
 - 2026-11-24 | Tip rápido: Copilot en Teams, reuniones que terminan en acuerdos claros (resumen al terminar, tareas y responsables, ponerse al día si llegaste tarde, correo de seguimiento listo) | CTA mensaje / cotización
 - 2026-11-25 | Checklist / protección de datos: antes de pegarlo en la IA, pensalo dos veces (4 cosas que no se comparten en un chat de IA público: datos personales de clientes, contraseñas y accesos, información financiera, contratos y estrategias) | CTA mensaje / cotización
 - 2026-11-26 | Pregunta gancho / temporada: ¿ya incluiste la capacitación en IA en tu plan 2027? (diagnóstico por área, programa a la medida, casos reales de tu empresa, calendario listo para 2027) | CTA cotización / mensaje
+- 2026-11-27 | Caso de uso: IA para gerencia y jefaturas, liderá con datos no a ciegas (informes ejecutivos al día, indicadores claros en Excel, documentos largos resumidos, reportes que llegan solos) | CTA mensaje / cotización
